@@ -7,8 +7,14 @@ public abstract class GameObject {
 	public int getXPosition(){
 		return xPosition;
 	}
-	public int getyPosition(){
+	public int getYPosition(){
 		return yPosition;
+	}
+	public void setXPosition(int xPosition){
+		this.xPosition = xPosition;
+	}
+	public void setYPosition(int yPosition){
+		this.yPosition = yPosition;
 	}
 	public abstract void collision(GameObject other);
 	public abstract boolean isColliding();

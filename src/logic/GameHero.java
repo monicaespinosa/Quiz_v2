@@ -12,12 +12,16 @@ public class GameHero extends GameCharacter {
 	public void move(char direction) {
 		switch(direction){
 		case 'U':
+			setYPosition(getYPosition()+1);
 			return;
 		case 'D':
+			setYPosition(getYPosition()-1);
 			return;
 		case 'R':
+			setXPosition(getXPosition()+1);
 			return;
 		case 'L':
+			setXPosition(getXPosition()-1);
 			return;
 		default:
 			return;

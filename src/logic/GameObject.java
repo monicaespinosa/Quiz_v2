@@ -4,6 +4,12 @@ public abstract class GameObject {
 	protected int xPosition;
 	protected int yPosition;
 	
+	public GameObject(int xPosition, int yPosition) {
+		super();
+		this.xPosition = xPosition;
+		this.yPosition = yPosition;
+	}
+	
 	public int getXPosition(){
 		return xPosition;
 	}

@@ -1,16 +1,25 @@
 package screen;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class InputHandler implements KeyListener {
-
+	
+	private static InputHandler instance;
+	
 	private double verticalAxis;
 	private double horizontalAxis;
 	
-	public InputHandler(GameCanvas canvas){
+	public final static InputHandler getInstance(){
+		if(instance == null)
+			instance = new InputHandler();
+		return instance;
+	}
+	
+	private InputHandler(){
 		verticalAxis=0;
 		horizontalAxis=0;
-		canvas.addKeyListener(this);
+		//canvas.addKeyListener(this);
 	}
 	
 	public double getVerticalAxis(){

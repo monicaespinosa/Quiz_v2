@@ -1,10 +1,15 @@
 package logic;
 
+import java.util.Observable;
+
 public class GameHero extends GameCharacter {
+
+	public GameHero(int xPosition, int yPosition) {
+		super(xPosition, yPosition);
+	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -38,6 +43,18 @@ public class GameHero extends GameCharacter {
 	public boolean isColliding() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

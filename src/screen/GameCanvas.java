@@ -23,7 +23,7 @@ public class GameCanvas extends Canvas implements Runnable {
 	private JFrame frame;
 	private InputHandler input;
 	
-	private boolean running;
+	private static boolean running;
 	private double FPS;
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
@@ -46,7 +46,8 @@ public class GameCanvas extends Canvas implements Runnable {
 		
 		FPS = 60;
 		
-		input = new InputHandler(this);
+		input = InputHandler.getInstance();
+		this.addKeyListener(input);
 	}
 	
 	public synchronized void start(){
@@ -56,6 +57,10 @@ public class GameCanvas extends Canvas implements Runnable {
 	
 	public synchronized void stop(){
 		running = false;
+	}
+	
+	public static boolean isRunning(){
+		return running;
 	}
 	
 	@Override

@@ -1,6 +1,7 @@
 package logic;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Maze implements Runnable{
 	public final static char derrota = 'D';
@@ -18,7 +19,6 @@ public class Maze implements Runnable{
 	private ArrayList<Obstacle> obstacles;
 	private ArrayList<Objective> objectives;
 	private GameHero hero;
-	
 		
 	public Maze(GameHero hero, Tile [][] map) {
 		this.enemies = new ArrayList<GameEnemy>();
@@ -29,6 +29,7 @@ public class Maze implements Runnable{
 		setObjectives(getObjectives());
 		this.hero = hero;
 		setHero(getHero());
+		//setMap();
 		this.map = map;
 	}
 	
@@ -41,8 +42,8 @@ public class Maze implements Runnable{
 	public Tile[][] getMap() {
 		return map;
 	}
-	public void setMap(Tile[][] map) {
-		this.map = map;
+	public void setMap(int h, int v){
+		this.map = new Tile [h][v];
 	}
 	public ArrayList<GameEnemy> getEnemies() {
 		return enemies;

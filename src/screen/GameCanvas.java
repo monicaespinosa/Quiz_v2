@@ -24,7 +24,6 @@ public class GameCanvas extends Canvas implements Runnable {
 	
 	private Maze maze;
 	private GameHero hero;
-	private Tile[][] map;
 	
 	private JFrame frame;
 	private InputHandler input;
@@ -39,7 +38,8 @@ public class GameCanvas extends Canvas implements Runnable {
 		setMaximumSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 		setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 		
-		maze = new Maze(hero, setMap());
+		//askSize();
+		//maze = new Maze(hero, maze.getMap());
 		frame = new JFrame(NAME);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());
@@ -56,15 +56,15 @@ public class GameCanvas extends Canvas implements Runnable {
 		input = InputHandler.getInstance();
 		this.addKeyListener(input);
 	}
-	public Tile[][] setMap(){
-		int h;
-		int v;
+	public void askSize(){
+		int high;
+		int lenght;
 		Scanner flux = new Scanner (System.in);
 		System.out.println("Inserte el tamanio horizontal del mapa");
-		h= flux.nextInt();
+		lenght= flux.nextInt();
 		System.out.println("Inserte el tamanio vertical del mapa");
-		v= flux.nextInt();
-		return this.map = new Tile[h][v];
+		high= flux.nextInt();
+		maze.setMap(lenght,high);
 	}
 	
 	public synchronized void start(){

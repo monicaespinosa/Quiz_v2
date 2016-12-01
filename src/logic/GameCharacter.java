@@ -10,8 +10,8 @@ public abstract class GameCharacter extends GameObject implements Runnable, Obse
 	
 	public GameCharacter(int xPosition, int yPosition) {
 		super(xPosition, yPosition);
-		// TODO Auto-generated constructor stub
 	}
+	
 	protected boolean shouldUpdate;
 	
 	public void run() {

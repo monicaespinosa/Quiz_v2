@@ -3,9 +3,17 @@ package logic;
 import java.util.Observable;
 
 public class GameHero extends GameCharacter {
+	private int vida;
 
-	public GameHero(int xPosition, int yPosition) {
+	public GameHero(int xPosition, int yPosition, int vida) {
 		super(xPosition, yPosition);
+		this.vida = vida;
+	}
+	public void setVida(int vida){
+		this.vida = vida;
+	}
+	public int getVida(){
+		return vida;
 	}
 
 	@Override

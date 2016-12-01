@@ -10,6 +10,7 @@ public class GameEnemy extends GameCharacter {
 		super(xPosition, yPosition);
 	}
 	
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub

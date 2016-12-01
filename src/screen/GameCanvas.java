@@ -1,5 +1,6 @@
 package screen;
 
+import logic.*;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,6 +21,9 @@ public class GameCanvas extends Canvas implements Runnable {
 	public final static int SCALE = 3;
 	public final static String NAME = "Maze";
 	
+	private Maze maze;
+	private GameHero hero;
+	
 	private JFrame frame;
 	private InputHandler input;
 	
@@ -33,6 +37,7 @@ public class GameCanvas extends Canvas implements Runnable {
 		setMaximumSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 		setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 		
+		maze = new Maze(hero, null);
 		frame = new JFrame(NAME);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());

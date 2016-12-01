@@ -18,6 +18,7 @@ public class Maze implements Runnable{
 	private ArrayList<Obstacle> obstacles;
 	private ArrayList<Objective> objectives;
 	private GameHero hero;
+	
 		
 	public Maze(GameHero hero, Tile [][] map) {
 		this.enemies = new ArrayList<GameEnemy>();
